@@ -4,11 +4,12 @@ const userRouter = express.Router();
 //Import data
 // import data from '../data.json' assert { type: 'json'};
 // const data = await import('../data.json', { assert: { type: 'json' } });
-//Proof of Life
-// console.log(data);
+// const data = require('../data.json');
+
 import { readFile } from 'fs/promises';
 const data = JSON.parse(await readFile(new URL('../data.json', import.meta.url)));
-// const data = require('../data.json');
+//Proof of Life
+// console.log(data);
 
 //Use an in-memory array for users
 //Data from JSON file
