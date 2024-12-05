@@ -1,3 +1,6 @@
+import express from 'express'
+const userRouter = express.Router();
+
 //Import data
 import data from '../data.json' assert { type: 'json'};
 //Proof of Life
@@ -8,20 +11,20 @@ console.log(data);
 const users = [...data]; 
 console.log("users:", users)
 
-import express from 'express'
-const router = express.Router();
 
-router.get('/hello', (req, res) => {
+
+userRouter.get('/hello', (req, res) => {
     res.send("Hello Users!")
 })
 
-router.get('/', (req, res) => {
+userRouter.get('/', (req, res) => {
     res.json({"List of all users":  users});
 })
-
-router.get('/:id', (req, res) => {
+//Get user by id
+userRouter.get('/:id', (req, res) => {
     const userId = Number(req.params.id);
     console.log(userId);
+    //Find user by id in users array
     const user = users.find((u) => u.id === userId);
     if(user) {
         res.json(user);
@@ -32,7 +35,7 @@ router.get('/:id', (req, res) => {
 })
 
 //POST route to add new user
-router.post('/', (req, res) => {
+userRouter.post('/', (req, res) => {
     const newUser = req.body;
     //Add new user to the users array
     users.push(newUser)
@@ -41,5 +44,5 @@ router.post('/', (req, res) => {
 })
 
 //Export the routes
-export default router;
+export default userRouter;
 
