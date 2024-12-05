@@ -5,7 +5,7 @@ const userRouter = express.Router();
 // import data from '../data.json' assert { type: 'json'};
 // const data = await import('../data.json', { assert: { type: 'json' } });
 //Proof of Life
-console.log(data);
+// console.log(data);
 import { readFile } from 'fs/promises';
 const data = JSON.parse(await readFile(new URL('../data.json', import.meta.url)));
 // const data = require('../data.json');
