@@ -122,8 +122,35 @@ In Express, nested routes refer to organizing and structuring your routes in a w
     ![users postman](<img/usersPostman.png>)
     - http://localhost:3000/users/4 - Should display JSON data for the user with the id of 4.
     ![usersId postman](<img/usersIdPostman.png>)
-    - http://localhost:3000/users/hello - Should display "Hellos users".
+    - http://localhost:3000/users/hello - Should display "Hello users".
     ![usersHello postman](<img/usersHelloPostman.png>)
 
 
-## Express Router
+## Express Router - Bonus
+
+* Create a `POST` that adds a user to the global users array in memory.
+* Define a global array that includes the data from `data.json` file:
+
+                //Use an in-memory array for users
+                //Data from JSON file
+                const users = [...data]; 
+                console.log("users:", users)
+
+* Create a `POST` handler that adds a new user:
+
+        //POST route to add new user
+        userRouter.post('/', (req, res) => {
+                const newUser = req.body;
+                //Add new user to the users array
+                users.push(newUser)
+                res.status(201).json(newUser)
+
+        })
+* Testing `POST` in Postman:
+        - Endpoint: http://localhost:3000/users/
+        ![post postman](<img/postPostman.png>)
+
+## Acknowledgements
+
+- Nested Routing - <https://www.geeksforgeeks.org/how-do-you-handle-nested-routes-in-express-js/>
+- Express Routers - <https://www.geeksforgeeks.org/build-your-first-router-in-node-js-with-express/>
