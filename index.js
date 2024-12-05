@@ -5,7 +5,7 @@ import express from "express";
 const app = express();
 
 //Import routes from main routers
-import router from "./routes/index.js";
+import routes from "./routes/index.js";
 
 // Middleware for JSON parsing
 app.use(express.json());
@@ -18,7 +18,7 @@ app.use(express.json());
 //Use routes from main routes
 //??? Do you only have to include the root handler for all other
 //routes from main routes??? 
-app.use('/', router)
+app.use(routes)
 // app.use('/about', router)
 
 //Start the server
