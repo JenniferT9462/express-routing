@@ -2,14 +2,14 @@ import express from 'express'
 const userRouter = express.Router();
 
 //Import data
-// import data from '../data.json' assert { type: 'json'};
+import data from '../data.json' with { type: 'json'};
 // const data = await import('../data.json', { assert: { type: 'json' } });
 // const data = require('../data.json');
 
-import { readFile } from 'fs/promises';
-const data = JSON.parse(await readFile(new URL('../data.json', import.meta.url)));
+// import { readFile } from 'fs/promises';
+// const data = JSON.parse(await readFile(new URL('../data.json', import.meta.url)));
 //Proof of Life
-// console.log(data);
+//console.log(data);
 
 //Use an in-memory array for users
 //Data from JSON file
