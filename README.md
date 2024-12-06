@@ -31,6 +31,7 @@ Build an Express server with organized routing, route parameters, and nested rou
 ## Server Implementation
 
 * Create a file named `index.js`.
+* In the package.json file add `"type": "module"` to Enable ES Module Syntax (import/export).
 * In the index.js file import express:
 
         import express from "express";
