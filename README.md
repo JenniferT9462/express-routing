@@ -20,7 +20,7 @@ Build an Express server with organized routing, route parameters, and nested rou
 
 4. Install express:
 
-        install express
+        npm install express
 
 5. Open new project in VSCode:
 
